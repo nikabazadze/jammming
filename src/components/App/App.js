@@ -8,7 +8,7 @@ import Playlist from '../Playlist/Playlist';
 
 function App() {
   const [ searchResults, setSearchResults ] = useState([]);
-  const [ playlistName, setPlaylistName ] = useState('');
+  const [ playlistName, setPlaylistName ] = useState('My Playlist');
   const [ playlistTracks, setPlaylistTracks ] = useState([]);
 
   useEffect(() => {
@@ -31,7 +31,22 @@ function App() {
         artist: 'The Notorious B.I.G',
         album: 'Unknown'
       }
-    ])
+    ]);
+
+    setPlaylistTracks([
+      {
+        id: 2,
+        name: 'Young, Wild and Free',
+        artist: 'Snoop Dogg',
+        album: 'Something'
+      },
+      {
+        id: 3,
+        name: 'Hypnotize',
+        artist: 'The Notorious B.I.G',
+        album: 'Unknown'
+      }
+    ]);
   }, []);
 
   return (
@@ -46,7 +61,10 @@ function App() {
           <SearchResults 
             searchResults={searchResults}
           />
-          <Playlist />
+          <Playlist 
+            playlistTracks={playlistTracks}
+            playlistName={playlistName}
+          />
         </section>
       </main>
     </div>
