@@ -11,6 +11,7 @@ function App() {
   const [ playlistName, setPlaylistName ] = useState('New Playlist');
   const [ playlistTracks, setPlaylistTracks ] = useState([]);
   const [ savedPlayists, setSavedPlayists ] = useState([]);
+  const [ searchTerm, setSearchTerm ] = useState('');
 
   useEffect(() => {
     setSearchResults([
@@ -76,7 +77,10 @@ function App() {
       </header>
 
       <main className='app'>
-        <SearchBar setSearchResults={setSearchResults}/>
+        <SearchBar 
+          searchTerm={searchTerm}
+          onChange={setSearchTerm}
+        />
         <section className='main-container'>
           <SearchResults 
             searchResults={searchResults}
