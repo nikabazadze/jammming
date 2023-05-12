@@ -47,6 +47,17 @@ h2 {
     padding-top: 4rem; /* temporary  */
 }
 
+/* SearchResults and Playlist background styling */
+.trackresults-container {
+    background-color: rgba(65, 31, 129, 0.6);
+    box-shadow: 2px 2px 7px 1px rgb(186, 8, 59);
+    border-radius: 0.3rem;
+    width: 42%;
+    height: 50rem;
+    padding: 0.9rem;
+    overflow-y: scroll;
+}
+
 /* Call to action (CTA) button */
 .CTA {
     background-color: rgb(186, 8, 59);

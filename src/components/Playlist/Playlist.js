@@ -9,7 +9,7 @@ function Playlist(props) {
     }
 
     return (
-        <div className='playlist'>
+        <div className='playlist trackresults-container'>
             <input 
                 value={props.playlistName}
                 type='text'
