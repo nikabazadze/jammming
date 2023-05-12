@@ -4,9 +4,17 @@ import React from "react";
 import TrackList from '../TrackList/TrackList';
 
 function Playlist(props) {
+    function handleChange({target}) {
+        props.onNameChange(target.value);
+    }
+
     return (
-        <div className='playlist-container'>
-            <h2>{props.playlistName}</h2>
+        <div className='playlist'>
+            <input 
+                value={props.playlistName}
+                type='text'
+                onChange={handleChange}
+            />
             <hr />
             <TrackList tracks={props.playlistTracks} />
         </div>

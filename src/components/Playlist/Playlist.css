@@ -1,10 +1,21 @@
-.playlist-container {
+.playlist {
     background-color: rgba(65, 31, 129, 0.6);
     box-shadow: 2px 2px 7px 1px rgb(186, 8, 59);
     width: 40%;
     height: 50rem;
     padding: 0.9rem;
     overflow-y: scroll;
+}
+
+.playlist input {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: antiquewhite;
+    background: transparent;
+    outline: 0;
+    width: 100%;
+    border: 0;
 }
 
 /* Media queries */

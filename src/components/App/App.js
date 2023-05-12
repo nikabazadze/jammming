@@ -64,6 +64,7 @@ function App() {
           <Playlist 
             playlistTracks={playlistTracks}
             playlistName={playlistName}
+            onNameChange={setPlaylistName}
           />
         </section>
       </main>
