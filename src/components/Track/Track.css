@@ -1,0 +1,20 @@
+.track-container {
+    border-bottom: 0.9px solid white;
+    height: 4rem;
+}
+
+.track {
+    height: 100%;
+    padding: 1rem 0;
+}
+
+.track h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+}
+
+.track p {
+    font-size: 0.82rem;
+    font-weight: 300;
+}

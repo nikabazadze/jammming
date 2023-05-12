@@ -7,6 +7,7 @@ function SearchResults(props) {
     return (
         <div className='searchResults'>
             <h2>Results</h2>
+            <hr />
             <TrackList tracks={props.searchResults} />
         </div>
     )
