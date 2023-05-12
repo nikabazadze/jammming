@@ -18,7 +18,8 @@ function Playlist(props) {
             <hr />
             <TrackList 
                 tracks={props.playlistTracks}
-                onAdd={false}
+                onRemove={props.onRemove}
+                isRemoval={true}
             />
         </div>
     )

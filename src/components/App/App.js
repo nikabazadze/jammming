@@ -35,11 +35,19 @@ function App() {
   }, []);
 
   function addTrack(track) {
-    if (!playlistTracks.includes(track)) {
+    if (!playlistTracks.find((playlistTrack) => playlistTrack.id === track.id)) {
       setPlaylistTracks((prev) => {
         return [...prev, track];
       });
     }
+  };
+
+  function removeTrack(track) {
+    setPlaylistTracks(
+      playlistTracks.filter((playlistTrack) => {
+        return playlistTrack.id !== track.id;
+      })
+    );
   };
 
   return (
@@ -59,6 +67,7 @@ function App() {
             playlistTracks={playlistTracks}
             playlistName={playlistName}
             onNameChange={setPlaylistName}
+            onRemove={removeTrack}
           />
         </section>
       </main>
