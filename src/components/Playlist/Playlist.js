@@ -16,7 +16,10 @@ function Playlist(props) {
                 onChange={handleChange}
             />
             <hr />
-            <TrackList tracks={props.playlistTracks} />
+            <TrackList 
+                tracks={props.playlistTracks}
+                onAdd={false}
+            />
         </div>
     )
 }

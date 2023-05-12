@@ -32,22 +32,15 @@ function App() {
         album: 'Unknown'
       }
     ]);
-
-    setPlaylistTracks([
-      {
-        id: 2,
-        name: 'Young, Wild and Free',
-        artist: 'Snoop Dogg',
-        album: 'Something'
-      },
-      {
-        id: 3,
-        name: 'Hypnotize',
-        artist: 'The Notorious B.I.G',
-        album: 'Unknown'
-      }
-    ]);
   }, []);
+
+  function addTrack(track) {
+    if (!playlistTracks.includes(track)) {
+      setPlaylistTracks((prev) => {
+        return [...prev, track];
+      });
+    }
+  };
 
   return (
     <div>
@@ -60,6 +53,7 @@ function App() {
         <section className='main-container'>
           <SearchResults 
             searchResults={searchResults}
+            onAdd={addTrack}
           />
           <Playlist 
             playlistTracks={playlistTracks}

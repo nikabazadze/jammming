@@ -1,11 +1,9 @@
-.track-container {
-    border-bottom: 0.9px solid white;
-    height: 4rem;
-}
-
 .track {
-    height: 100%;
-    padding: 1rem 0;
+    border-bottom: 1px solid rgb(161, 161, 161);
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .track h3 {
@@ -17,4 +15,11 @@
 .track p {
     font-size: 0.82rem;
     font-weight: 300;
+}
+
+.track button {
+    background: transparent;
+    border: 0;
+    color: antiquewhite;
+    cursor: pointer;
 }

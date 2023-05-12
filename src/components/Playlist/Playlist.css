@@ -9,12 +9,13 @@
 
 .playlist input {
     font-family: 'Lato', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 500;
     color: antiquewhite;
     background: transparent;
     outline: 0;
     width: 100%;
+    height: 1.5rem;
     border: 0;
 }
 

@@ -11,6 +11,7 @@ function TrackList(props) {
                     return <Track 
                                 key={track.id}
                                 track={track}
+                                onAdd={props.onAdd}
                             />
                 })
             }
