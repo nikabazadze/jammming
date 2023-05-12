@@ -14,16 +14,19 @@ function App() {
   useEffect(() => {
     setSearchResults([
       {
+        id: 1,
         name: 'God\'s Plan',
         artist: 'Drake',
         album: 'Scorpion'
       },
       {
+        id: 2,
         name: 'Young, Wild and Free',
         artist: 'Snoop Dogg',
         album: 'Something'
       },
       {
+        id: 3,
         name: 'Hypnotize',
         artist: 'The Notorious B.I.G',
         album: 'Unknown'

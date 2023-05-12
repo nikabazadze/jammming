@@ -25,6 +25,11 @@ h1 {
     letter-spacing: 0.05em;
 }
 
+h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
 .app {
     background-image: url(./background-pic.jpg);
     background-repeat: no-repeat;
@@ -32,13 +37,14 @@ h1 {
     background-size: cover;
     height: 100%;
     font-weight: 400;
-    padding: 0 20% 10% 20%;
+    padding: 0 15% 10% 15%;
 }
 
 .main-container {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    padding-top: 4rem; /* temporary  */
 }
 
 /* Media queries */
