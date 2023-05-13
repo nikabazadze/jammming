@@ -14,7 +14,7 @@ function SearchBar(props) {
                 value={props.searchTerm}
                 onChange={handleChange}
             />
-            <button className='CTA'>SEARCH</button>
+            <button className='CTA' onClick={props.onSearch}>SEARCH</button>
         </div>
     )
 }

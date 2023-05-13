@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
 import { useState, useEffect } from 'react';
+import Spotify from '../../Util/Spotify';
 
 import SearchBar from '../SearchBar/SearchBar';
 import SearchResults from '../SearchResults/SearchResults';
@@ -12,32 +13,6 @@ function App() {
   const [ playlistTracks, setPlaylistTracks ] = useState([]);
   const [ savedPlayists, setSavedPlayists ] = useState([]);
   const [ searchTerm, setSearchTerm ] = useState('');
-
-  useEffect(() => {
-    setSearchResults([
-      {
-        id: 1,
-        uri: 1,
-        name: 'God\'s Plan',
-        artist: 'Drake',
-        album: 'Scorpion'
-      },
-      {
-        id: 2,
-        uri: 2,
-        name: 'Young, Wild and Free',
-        artist: 'Snoop Dogg',
-        album: 'Something'
-      },
-      {
-        id: 3,
-        uri: 3,
-        name: 'Hypnotize',
-        artist: 'The Notorious B.I.G',
-        album: 'Unknown'
-      }
-    ]);
-  }, []);
 
   function addTrack(track) {
     if (!playlistTracks.find((playlistTrack) => playlistTrack.id === track.id)) {
@@ -70,6 +45,12 @@ function App() {
     setPlaylistTracks([]);
   };
 
+  function search() {
+    Spotify.search(searchTerm).then((results) => {
+      setSearchResults(results);
+    })
+  }
+
   return (
     <div>
       <header>
@@ -80,6 +61,7 @@ function App() {
         <SearchBar 
           searchTerm={searchTerm}
           onChange={setSearchTerm}
+          onSearch={search}
         />
         <section className='main-container'>
           <SearchResults 
