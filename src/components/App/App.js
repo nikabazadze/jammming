@@ -11,7 +11,6 @@ function App() {
   const [ searchResults, setSearchResults ] = useState([]);
   const [ playlistName, setPlaylistName ] = useState('New Playlist');
   const [ playlistTracks, setPlaylistTracks ] = useState([]);
-  const [ savedPlayists, setSavedPlayists ] = useState([]);
   const [ searchTerm, setSearchTerm ] = useState('');
 
   function addTrack(track) {
@@ -31,25 +30,18 @@ function App() {
   };
 
   function savePlaylist() {
-    const trackURIs = playlistTracks.map((track) => track.uri);
-    setSavedPlayists((prev) => {
-      return [
-        ...prev,
-        {
-          name: playlistName,
-          uris: trackURIs
-        }
-      ];
+    const trackUris = playlistTracks.map((track) => track.uri);
+    Spotify.savePlaylist(playlistName, trackUris).then(() => {
+      setPlaylistName('New Playlist');
+      setPlaylistTracks([]);
     });
-    setPlaylistName('New Playlist');
-    setPlaylistTracks([]);
   };
 
   function search() {
     Spotify.search(searchTerm).then((results) => {
       setSearchResults(results);
     })
-  }
+  };
 
   return (
     <div>
