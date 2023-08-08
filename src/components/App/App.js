@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Spotify from '../../Util/Spotify';
 
 import SearchBar from '../SearchBar/SearchBar';
@@ -13,6 +13,7 @@ function App() {
   const [ playlistTracks, setPlaylistTracks ] = useState([]);
   const [ searchTerm, setSearchTerm ] = useState('');
 
+  // Adds track to the playlist if it's not already added
   function addTrack(track) {
     if (!playlistTracks.find((playlistTrack) => playlistTrack.id === track.id)) {
       setPlaylistTracks((prev) => {
@@ -21,6 +22,7 @@ function App() {
     }
   };
 
+  // Removes track from the playlist
   function removeTrack(track) {
     setPlaylistTracks(
       playlistTracks.filter((playlistTrack) => {
@@ -29,6 +31,7 @@ function App() {
     );
   };
 
+  // Saves playlist to the user's Spotify account
   function savePlaylist() {
     const trackUris = playlistTracks.map((track) => track.uri);
     Spotify.savePlaylist(playlistName, trackUris).then(() => {
@@ -37,6 +40,7 @@ function App() {
     });
   };
 
+  // Searches for the songs of the specified artist/album in the Spotify library
   function search() {
     Spotify.search(searchTerm).then((results) => {
       setSearchResults(results);
