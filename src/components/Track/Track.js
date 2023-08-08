@@ -2,6 +2,8 @@ import './Track.css';
 import React from "react";
 
 function Track(props) {
+
+    // It adds or removes track from the playlist depending on props.isRemoval value
     function handleClick() {
         props.isRemoval ? props.onRemove(props.track) : props.onAdd(props.track);
     }

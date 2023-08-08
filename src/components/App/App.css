@@ -45,7 +45,7 @@ h2 {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding-top: 4rem; /* temporary  */
+    padding-top: 4rem;
 }
 
 /* SearchResults and Playlist background styling */
@@ -87,4 +87,49 @@ h2 {
     font-size: 0.93rem;
 }
 
-/* Media queries */
+
+/* Media queris */
+@media only screen and (max-width: 1250px) {
+    .app {
+        padding: 0 13% 10% 13%;
+    }
+
+    .trackresults-container {
+        width: 45%;
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    .app {
+        padding: 0 10% 10% 10%;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .main-container {
+       flex-direction: column;
+       gap: 3rem;
+       align-items: center;
+    }
+
+    .trackresults-container {
+        width: 80%;
+        height: 30rem;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    html {
+        font-size: 0.95rem;
+    }
+
+    .trackresults-container {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    html {
+        font-size: 0.85rem;
+    }
+}
