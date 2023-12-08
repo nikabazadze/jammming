@@ -50,7 +50,7 @@ function App() {
   return (
     <div>
       <header>
-        <h1>Jammming</h1>
+        <a href='/'><h1>Jammming</h1></a>
       </header>
 
       <main className='app'>
