@@ -31,6 +31,11 @@ h2 {
     font-weight: 500;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .app {
     background-image: url(./background-pic.jpg);
     background-repeat: no-repeat;
@@ -54,7 +59,8 @@ h2 {
     box-shadow: 2px 2px 7px 1px rgb(186, 8, 59);
     border-radius: 0.3rem;
     width: 42%;
-    height: 50rem;
+    min-height: 30rem;
+    max-height: 50rem;
     padding: 0.9rem;
     overflow-y: scroll;
 }
