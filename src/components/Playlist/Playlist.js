@@ -21,9 +21,11 @@ function Playlist(props) {
                 onRemove={props.onRemove}
                 isRemoval={true}
             />
-            <div className='button-container'>
-                <button className='CTA' onClick={props.onSave}>SAVE TO SPOTIFY</button>
-            </div>
+            {(props.playlistTracks.length > 0) &&
+                <div className='button-container'>
+                    <button className='CTA' onClick={props.onSave}>SAVE TO SPOTIFY</button>
+                </div>
+            }
         </div>
     )
 }
