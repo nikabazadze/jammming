@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# Jammming
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Jammming is a single-page web application that allows users to search for songs using Spotify's vast music library, create custom playlists, and save them directly to their Spotify accounts. Built with HTML, CSS, JavaScript, and React, this project leverages the Spotify Web API for a seamless music management experience.
 
-## Available Scripts
+## Screenshot
 
-In the project directory, you can run:
+![Jammming App Screenshot](/src/assets/images/app-image.png)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Spotify Integration**: Authorize and manage Spotify content within the app.
+- **Search Functionality**: Find songs, albums, and artists from Spotify's extensive library.
+- **Playlist Management**: Create, edit, and delete custom playlists.
+- **Responsive Design**: A sleek, user-friendly interface adaptable to a wide range of devices.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Live Demo
 
-### `npm test`
+You can try out Jammming live at [Jammming on Netlify](https://jammming-reactapp.netlify.app/).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Motivation
 
-### `npm run build`
+This project was an exploratory journey into React development, aimed at understanding component-based architecture and state management in real-world applications. It served as a significant learning experience, particularly in integrating third-party APIs and creating a fully functional web application.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technical Challenges
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Building Jammming as my first fully functional React web application presented a series of challenges that were crucial in my journey to understanding the intricacies of React's component-based architecture. Here are some of the hurdles I encountered and insights I gained:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Component Structure**: Determining the hierarchy and composition of components was initially daunting. I had to think critically about which components should maintain their own state and which should be stateless functional components. This was a practical exercise in planning and implementing a clean component architecture.
 
-### `npm run eject`
+- **State Management**: Understanding how to lift state up and pass it down to the necessary components via props was a concept that took some practice to get right. Ensuring the components were updated and rendered correctly when the state changed was an exercise in managing React's unidirectional data flow.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **API Integration**: Working with the Spotify Web API was my first experience with a third-party API in a React application. Handling authentication and managing API requests/responses while keeping the UI responsive was a significant learning curve.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Asynchronous Operations**: Implementing asynchronous operations and handling promises were challenging. I learned to manage state in an asynchronous environment, ensuring that the UI components reflect the correct state at all times.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Reflecting on these challenges, each obstacle provided a valuable lesson that deepened my understanding of React and front-end development. This project served as a practical guide through the React landscape, teaching me not just how to use the library, but how to think in React.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Components
 
-## Learn More
+- `App.js`: The central hub of the application, managing state and rendering child components.
+- `SearchBar`: Handles song searches and displays the search input field.
+- `SearchResults`: Lists the results of the search query.
+- `Playlist`: Enables users to manage their custom playlists.
+- `TrackList`: Renders a list of tracks either from search results or playlists.
+- `Track`: Displays individual songs within the TrackList.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Util
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- `Spotify.js`: Contains functions for interacting with the Spotify Web API, including user authentication, song search, and playlist management.
 
-### Code Splitting
+## Authorization Flow
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Jammming uses the `Implicit Grant Flow` from the Spotify Web API for user authentication, which simplifies the login process without the need for server-side code.
 
-### Analyzing the Bundle Size
+## Getting Started
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+To run Jammming locally:
 
-### Making a Progressive Web App
+1. Clone the repository.
+2. Install dependencies with `npm install`.
+3. Start the development server with `npm start`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Future Improvements
 
-### Advanced Configuration
+While Jammming is a fully functional React web application, there is always room for growth and enhancement. The following are some of the improvements I am considering for future versions:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- **Enhanced Security**: Transitioning the authorization flow from "Implicit Grant Flow" to "Authorization Code Flow with PKCE" to provide a more secure experience for users.
 
-### Deployment
+- **Search Term Persistence**: Implementing functionality to remember the user's search term after they are redirected during the login process, so they can pick up right where they left off.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- **Search Optimization**: Refining the search feature to exclude songs from the search results that are already in the playlist, thereby streamlining the user experience and preventing duplicate entries.
 
-### `npm run build` fails to minify
+- **Loading Indicators**: Adding a loading screen or animation when playlists are being saved. This will provide users with visual feedback that their request is being processed, improving the overall user experience.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+These enhancements aim to make Jammming more user-friendly, secure, and efficient, and I look forward to implementing these features as I continue to learn and grow as a developer.
+
+## Contributions
+
+As this is a practice project, contributions are not actively sought. However, feedback and suggestions are always welcome.
+
+## License
+
+Jammming is open-source software [licensed as MIT](LICENSE).
