@@ -2,8 +2,6 @@
 
 Jammming is a single-page web application that allows users to search for songs using Spotify's vast music library, create custom playlists, and save them directly to their Spotify accounts. Built with HTML, CSS, JavaScript, and React, this project leverages the Spotify Web API for a seamless music management experience.
 
-## Screenshot
-
 ![Jammming App Screenshot](/src/assets/images/app-image.png)
 
 ## Features
